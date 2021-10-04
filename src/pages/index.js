@@ -10,6 +10,7 @@ const IndexPage = () => {
         alt="beach in Tulum"
         src="../images/tulum.jpg"
       />
+      <p>Tulum, Mexico</p>
     </Layout>
   )
 }
