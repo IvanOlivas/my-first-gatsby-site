@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
   query {
-    allWpPost(filter: {}) {
+    allWpPost {
       edges {
         node {
           id
