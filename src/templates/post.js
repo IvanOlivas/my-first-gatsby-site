@@ -1,3 +1,5 @@
+//post.js
+
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
@@ -12,6 +14,8 @@ class Post extends Component {
     )
   }
 }
+
+
 const data = JSON.stringify({
     query: `query($id: String!) {
 		allWpPost {

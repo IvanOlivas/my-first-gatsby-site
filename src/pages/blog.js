@@ -1,9 +1,11 @@
+//blog.js
+
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const BlogPage = ({ data }) => {
-	return (<Layout pageTitle="My Blog Posts">
+	return (<Layout pageTitle="Ivan's Blog Posts">
 		<ul>
 		{
 			data.allWpPost.edges.map(({node}) => 
