@@ -1,25 +1,25 @@
 module.exports = {
   siteMetadata: {
-    title: "Welcome to My First Gatsby Site!",
+    title: "My First Gatsby Site",
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-        options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      }
+	"gatsby-plugin-sharp",
+	{
+		resolve: "gatsby-source-filesystem",
+		options: {
+			name: `blog`,
+			path: `${__dirname}/blog`,
+		}
     },
-    {
+	{
       resolve: `gatsby-source-wordpress`,
-        options: {
+      options: {
         url: `https://csc496wordpress.tldr.dev/graphql`,
         protocol: `https`,
-        hostingWPCOM: false,
-        useACF: false
-        },
+        hostingWPCOM: 'false',
+        useACF: 'false'
       }
-  ],
-};
+    },
+  ]
+}
