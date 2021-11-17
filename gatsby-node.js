@@ -40,6 +40,7 @@ const getPokemonData = names =>
       return { ...pokemon }
     })
   )
+
 exports.createPages = async ({ actions: { createPage } }) => {
   const allPokemon = await getPokemonData(["mew", "ditto", "squirtle", "charmander"])
   createPage({
@@ -47,4 +48,5 @@ exports.createPages = async ({ actions: { createPage } }) => {
     component: require.resolve("./src/templates/all-pokemon.js"),
     context: { allPokemon },
   })
+  
 }

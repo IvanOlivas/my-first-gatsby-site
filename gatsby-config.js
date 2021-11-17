@@ -1,10 +1,14 @@
 //gatsby.config.js
 module.exports = {
+    pathPrefix: `gatsby-geo-simple-map`,
     siteMetadata: {
-      title: "My First Gatsby Site, Welcome!",
+      title: "My First Gatsby Site!",
+      description: `Ivan's first site`,
+      author: `Ivan Olivas`,
     },
     plugins: [
-      "gatsby-plugin-image",
+    `gatsby-plugin-react-leaflet`,
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
