@@ -1,12 +1,14 @@
 //blog.js
 
-import * as React from 'react'
+//import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import * as React from 'react'
 
 const BlogPage = ({ data }) => {
-	return (<Layout pageTitle="Ivan's Blog Posts">
-		<ul>
+	return (
+	<Layout pageTitle="Ivan's Blog Posts">
+		<ul>			
 		{
 			data.allWpPost.edges.map(({node}) => 
 			(<div>

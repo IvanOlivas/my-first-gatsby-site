@@ -1,6 +1,8 @@
 //all-pokemon.js
 
 import React from "react"
+
+
 export default function AllPokemon({ pageContext: { allPokemon } }) {
   return (
     <div>

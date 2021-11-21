@@ -1,6 +1,6 @@
 //layout.js
 
-import * as React from 'react'
+//import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
   container,
@@ -10,6 +10,17 @@ import {
   navLinkText,
   siteTitle
 } from './layout.module.css'
+
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "../components/GlobalStyles";
+import { lightMode, darkMode } from "../components/theme"
+import React, { useState, useEffect } from 'react'
+import storage from 'local-storage-fallback'
+
+function getTheme() {
+  const savedTheme = storage.getItem('theme')
+  return savedTheme ? JSON.parse(savedTheme) : {mode: 'light'};
+}
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -22,8 +33,24 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
 
+  const [theme, setTheme] = useState(getTheme);
+  useEffect(
+    ()=> {
+    storage.setItem('theme', JSON.stringify(theme));
+    },
+    [theme]
+  );
+  
+  const toggleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+
   return (
+    <ThemeProvider theme={theme === 'light' ? lightMode : darkMode}> 
+    <>
+		<GlobalStyles/>
     <div className={container}>
+    <button onClick={toggleTheme}>Toggle Dark/Light Mode</button>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <nav>
@@ -60,6 +87,8 @@ const Layout = ({ pageTitle, children }) => {
         {children}
       </main>
     </div>
+    </>
+    </ThemeProvider>
   )
 }
 

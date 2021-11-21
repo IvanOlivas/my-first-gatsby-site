@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import './leafletmap.css'
+import Layout from '../components/layout'
 
 class LeafletMap extends React.Component {
 
@@ -17,14 +18,15 @@ class LeafletMap extends React.Component {
   }
 
   static defaultProps = {
-    position: [51, -1],
-    zoom: 13,
+    position: [41, -1],
+    zoom: 15,
     markerText: ""
   }
 
     render() {
 
         return (
+          <Layout>
             <MapContainer
             className="markercluster-map"
             center={[25.0, -72]}
@@ -41,6 +43,7 @@ class LeafletMap extends React.Component {
           </Marker>
           }
           </MapContainer>
+          </Layout>
         );
     }
   }

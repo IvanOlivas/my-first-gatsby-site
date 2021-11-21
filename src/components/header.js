@@ -27,8 +27,11 @@ const Header = ({ siteTitle }) => (
           Simple Leaflet Map in Gatsby
         </Link>
       </h1>
+
     </div>
+
   </header>
+  
 )
 
 Header.propTypes = {
