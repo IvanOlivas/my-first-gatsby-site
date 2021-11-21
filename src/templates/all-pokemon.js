@@ -1,10 +1,11 @@
 //all-pokemon.js
 
 import React from "react"
-
+import Layout from '../components/layout'
 
 export default function AllPokemon({ pageContext: { allPokemon } }) {
   return (
+    <Layout pageTitle="Pokemon!">
     <div>
       <ul>
         {allPokemon.map(pokemon => (
@@ -15,5 +16,6 @@ export default function AllPokemon({ pageContext: { allPokemon } }) {
         ))}
       </ul>
     </div>
+    </Layout>
   )
 }

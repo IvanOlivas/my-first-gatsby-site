@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-react-leaflet`,
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-source-filesystem",
       options: {
